@@ -2,7 +2,6 @@
 // Created by aysegul on 4/6/18.
 //
 
-// reading a text file
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -214,6 +213,21 @@ int createHcontig (int argc, char** argv)
     string genename;
     int count=0;
     int c=0;
+
+    char front_oea_path[70] = "/home/aysegull/Dropbox/clion/ResearchC++/frontname_oea";
+    char front_oea_pathend[5]=".txt";
+    char reverse_oea_path[60] = "/home/aysegull/Dropbox/clion/ResearchC++/reversename_oea";
+    char reverse_oea_pathend[5]=".txt";
+    strcat(front_oea_path,sample_number);
+    strcat(front_oea_path,front_oea_pathend);
+    strcat(reverse_oea_path,sample_number);
+    strcat(reverse_oea_path,reverse_oea_pathend);
+    ofstream oea_front;
+    oea_front.open (front_oea_path);
+    ofstream oea_reverse;
+    oea_reverse.open (reverse_oea_path);
+
+
     if (myfile.is_open())
     {
 
@@ -250,6 +264,19 @@ int createHcontig (int argc, char** argv)
                             string look= lin[2];
                             if (look.find(line) != std::string::npos) //if the gene is found in samfile
                             {
+
+
+                                if(69 == stoi(lin[1]) || 73 == stoi(lin[1]))
+                                {
+                                    oea_front<<lin[0]<<"/1\n";
+                                    oea_reverse<<lin[0]<<"/2\n";
+
+                                }
+                                if(137 == stoi(lin[1]) || 133== stoi(lin[1]) )
+                                {
+                                    oea_front<<lin[0]<<"/1\n";
+                                    oea_reverse<<lin[0]<<"/2\n";
+                                }
                                 samfile<<line2<<"\n";
 
                             }
@@ -350,17 +377,6 @@ int createHcontig (int argc, char** argv)
 
 
         }
-
-
-
-
-
-
-
-
-
-
-
 
     }
 
