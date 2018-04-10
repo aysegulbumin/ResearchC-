@@ -64,16 +64,13 @@ int main (int argc, char** argv)
     int min = 0;
     int sec = 0;
     time=elapsed;
-    // using the time from ^ above, convert
-    // secs to HH:MM:SS format using division
-    // and modulus
+  
     hour = time/3600;
     time = time%3600;
     min = time/60;
     time = time%60;
     sec = time;
 
-    // display data to user
     cout<<"The time in HH:MM:SS format is: "<<hour<<" hours, "
         <<min<<" minutes, and "<<sec<<" seconds!";
 
