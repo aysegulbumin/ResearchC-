@@ -14,15 +14,15 @@
 using namespace std;
 
 
-float computeMean(vector<int> numbers)
+double computeMean(vector<int> numbers)
 {
     if(numbers.empty())
     {
         return 0;
     }
 
-    float total = 0;
-    for (int number : numbers)
+    double total = 0;
+    for ( int number : numbers)
     {
         total += number;
     }
@@ -30,9 +30,9 @@ float computeMean(vector<int> numbers)
     return (total / numbers.size());
 }
 
-float computeVariance(float mean, vector<int> numbers)
+double computeVariance(double mean, vector< int> numbers)
 {
-    float result = 0;
+    double result = 0;
     for(int number : numbers)
     {
         result += (number - mean)*(number - mean);
@@ -48,9 +48,9 @@ int meandeviation (int argc, char** argv)
     string line;
     string line2;
     int flag=0;
-    char path[60]="/home/aysegull/Dropbox/clion/ResearchC++/arraylist.txt";
-    char path3[60]="/home/aysegull/Dropbox/clion/ResearchC++/histogram";
-    char path4[60]="/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+    char path[60]="/home/aysegul/Dropbox/clion/ResearchC++/arraylist.txt";
+    char path3[60]="/home/aysegul/Dropbox/clion/ResearchC++/histogram";
+    char path4[60]="/home/aysegul/Dropbox/clion/ResearchC++/histogram";
 
     char endpath3[5]="/";
 
@@ -103,7 +103,7 @@ int meandeviation (int argc, char** argv)
     ofstream means;
     means.open(path4);
 
-    char path5[60]="/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+    char path5[60]="/home/aysegul/Dropbox/clion/ResearchC++/histogram";
     strcat(path5,sample_number);
     strcat(path5,endpath3);
     strcat(path5,"HLs.txt");
@@ -117,7 +117,7 @@ int meandeviation (int argc, char** argv)
     {
         while ( getline (myfile,line) )
         {
-            char path2[70] = "/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+            char path2[70] = "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
             char endpath2[5]="/";
 
             strcat(path2,sample_number);
@@ -147,12 +147,12 @@ int meandeviation (int argc, char** argv)
                             if(randomstart<=myvec.size() && randomend<=myvec.size() )
                             {
                                 count_bigmean++;
-                                vector<int>::const_iterator first = myvec.begin() + randomstart ;
-                                vector<int>::const_iterator last = myvec.begin() + randomend;
-                                vector<int> newVec(first, last);
-                                float mean = computeMean(myvec);
-                                float variance = computeVariance(mean, myvec);
-                                float standardDeviation = sqrt(variance);
+                                vector<int >::const_iterator first = myvec.begin() + randomstart ;
+                                vector< int>::const_iterator last = myvec.begin() + randomend;
+                                vector< int> newVec(first, last);
+                                double mean = computeMean(myvec);
+                                double variance = computeVariance(mean, myvec);
+                                double standardDeviation = sqrt(variance);
                                 bigmean=bigmean+mean;
 
                             }
@@ -160,11 +160,11 @@ int meandeviation (int argc, char** argv)
                         bigmean=bigmean/count_bigmean;
                         means<<"Mean: "<<bigmean<<"\t";
                         // cout<<"Big mean"<<bigmean<<endl;
-                        float bigvariance = computeVariance(bigmean, myvec);
-                        float bigstandardDeviation = sqrt(bigvariance);
+                        long double bigvariance = computeVariance(bigmean, myvec);
+                        long double  bigstandardDeviation = sqrt(bigvariance);
                         means<<"StdDev: "<<bigstandardDeviation<<"\t";
                         // cout<<"Big standardDeviation"<<bigstandardDeviation<<endl;
-                        float coverage=bigmean+ stoi(coefficient)*bigstandardDeviation;
+                        long double coverage=bigmean+ stoi(coefficient)*bigstandardDeviation;
                         means<<"Cov: "<<coverage<<"\t";
                         // cout<<"Coverage"<<coverage<<endl;
 
@@ -247,7 +247,7 @@ int meandeviation (int argc, char** argv)
                         for (int i = 0; i < letter_vector.size(); ++i)
                         {
                             highlow<<letter_vector[i];
-                            myletters=myletters+letter_vector[i];
+                            myletters+=letter_vector[i];
                             highlow<<" ";
                             //cout<< letter_vector[i];
                         }

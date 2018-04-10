@@ -10,5 +10,5 @@ bool isUnique1(int argc, char** argv);
 vector<string> convertbytab(string input);
 vector<string> convertbyspace(string input);
 vector<int> convertbyspace_int(string input);
-
+vector<long long int> convertbyspace_longlongint(string input);
 #endif //RESEARCHC_COMMON_H

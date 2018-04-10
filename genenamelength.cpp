@@ -14,7 +14,7 @@ int genenamelength(int argc, char **argv)
 {
     cout<< "GeneNameLength"<<endl;
     string line;
-    char path[100]="/home/aysegull/Dropbox/clion/ResearchC++/database/megares_database_v1.01.fasta";
+    char path[100]="/home/aysegul/Dropbox/clion/ResearchC++/database/megares_database_v1.01.fasta";
 
     if(argc<=1)
     {
@@ -23,7 +23,7 @@ int genenamelength(int argc, char **argv)
     }
 
 
-    char path2[70] = "/home/aysegull/Dropbox/clion/ResearchC++/genesname_length.txt";
+    char path2[70] = "/home/aysegul/Dropbox/clion/ResearchC++/genesname_length.txt";
 
     ifstream myfile (path);
     ofstream genenames;

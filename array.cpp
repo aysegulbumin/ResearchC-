@@ -19,8 +19,8 @@ int array(int argc, char **argv)
     string line;
     string line2;
     int len=0;
-    char path[70] = "/home/aysegull/Dropbox/clion/ResearchC++/genesname_length.txt";
-    char patharray[60] = "/home/aysegull/Dropbox/clion/ResearchC++/arraylist.txt";
+    char path[100] = "/home/aysegul/Dropbox/clion/ResearchC++/genesname_length.txt";
+    char patharray[100] = "/home/aysegul/Dropbox/clion/ResearchC++/arraylist.txt";
     if(argc<=1)
     {
         cout<<"Sample number is missing in array"<<endl;
@@ -31,7 +31,7 @@ int array(int argc, char **argv)
     char *sample_number=argv[1];
 
 
-    char path3[50] = "/home/aysegull/Dropbox/clion/ResearchC++/all";
+    char path3[100] = "/home/aysegul/Dropbox/clion/ResearchC++/all";
     char endpath3[5]=".sam";
 
 
@@ -93,7 +93,7 @@ int array(int argc, char **argv)
     {
         count0++;
 
-        char path_[100]= "/home/aysegull/Dropbox/clion/ResearchC++/genesams";
+        char path_[100]= "/home/aysegul/Dropbox/clion/ResearchC++/genesams";
         char slash[6]="/gene";
         char const *gene_number=to_string(count0).c_str();
         char endpath_[5]=".sam";
@@ -107,7 +107,7 @@ int array(int argc, char **argv)
 
 
 
-        char path_2[100]= "/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+        char path_2[100]= "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
         char slash2[7]="/array";
         char endpath_2[5]=".txt";
         strcat(path_2,sample_number);
@@ -119,12 +119,11 @@ int array(int argc, char **argv)
         string name=elem.first;
         arraylistfile<<"array"+to_string(count0)+".txt\n";
         len=map_length[elem.first];
-        vector<int> my_vec;
+        int my_vec[4000] = {0};
 
-        for(int i=0;i<len;i++)
-        {
-            my_vec.push_back(0);
-        }
+        //vector<int> my_vec;
+
+
 
 
         for(auto e: elem.second)
@@ -138,12 +137,17 @@ int array(int argc, char **argv)
                 my_vec[k]=my_vec[k]+1;
             }
         }
-
+        for(int i=0;i<len;i++)
+        {
+            arrayfile<<my_vec[i];
+            arrayfile<< " ";
+        }
+        /*
         for (int i : my_vec)
         {
             arrayfile<< i;
             arrayfile<<" ";
-        }
+        }*/
 
         arrayfile<<"\n";
         arrayfile<<name;

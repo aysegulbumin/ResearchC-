@@ -14,6 +14,9 @@ using namespace std;
 
 int main (int argc, char** argv)
 {
+    clock_t start = clock();
+
+
     char mkdir[20]="mkdir genesams";
     char *sample_number=argv[1];
     strcat(mkdir,sample_number);
@@ -26,7 +29,7 @@ int main (int argc, char** argv)
     meandeviation(argc, argv);
     createHighfasta(argc,argv);
     runblat1(argc,argv);
-    bool unique=true;
+
     if(isUnique1(argc,argv))
     {
         createHcontig(argc,argv);
@@ -52,6 +55,30 @@ int main (int argc, char** argv)
         system("rm -rf *_oea*.txt");
     }
 
+    clock_t stop = clock();
+    double elapsed = (double) (stop - start) / CLOCKS_PER_SEC;
+
+
+    int time = 0;
+    int hour = 0;
+    int min = 0;
+    int sec = 0;
+    time=elapsed;
+    // using the time from ^ above, convert
+    // secs to HH:MM:SS format using division
+    // and modulus
+    hour = time/3600;
+    time = time%3600;
+    min = time/60;
+    time = time%60;
+    sec = time;
+
+    // display data to user
+    cout<<"The time in HH:MM:SS format is: "<<hour<<" hours, "
+        <<min<<" minutes, and "<<sec<<" seconds!";
+
+
+    printf("\nTime elapsed: %.5f\n", elapsed);
 
     return 0;
 }

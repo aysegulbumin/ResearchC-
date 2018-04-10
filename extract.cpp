@@ -17,7 +17,7 @@ int extract(int argc, char **argv)
     string line;
 
 
-    char path[60]="/home/aysegull/Dropbox/clion/ResearchC++/sam_files/align";
+    char path[60]="/home/aysegul/Dropbox/clion/ResearchC++/sam_files/align";
 
     if(argc<=1)
     {
@@ -25,14 +25,14 @@ int extract(int argc, char **argv)
         return -1;
     }
 
-    char path2[50] = "/home/aysegull/Dropbox/clion/ResearchC++/all";
+    char path2[50] = "/home/aysegul/Dropbox/clion/ResearchC++/all";
     char *sample_number=argv[1];
     char endpath2[5]=".sam";
-    char path3[70] = "/home/aysegull/Dropbox/clion/ResearchC++/frontname";
+    char path3[70] = "/home/aysegul/Dropbox/clion/ResearchC++/frontname";
     char endpath3[5]=".txt";
-    char path4[60] = "/home/aysegull/Dropbox/clion/ResearchC++/reversename";
+    char path4[60] = "/home/aysegul/Dropbox/clion/ResearchC++/reversename";
     char endpath4[5]=".txt";
-    char path5[50] = "/home/aysegull/Dropbox/clion/ResearchC++/flagfour";
+    char path5[50] = "/home/aysegul/Dropbox/clion/ResearchC++/flagfour";
     char endpath5[5]=".sam";
 
     strcat(path,sample_number);
@@ -74,11 +74,11 @@ int extract(int argc, char **argv)
                 }
                 else if(77 == stoi(myvec[1]))
                 {
-                    frontname<<myvec[0]<<"/1\n";
+                    frontname<<myvec[0]<<"\n";
                 }
                 else if(141 == stoi(myvec[1]))
                 {
-                    reversename<<myvec[0]<<"/2\n";
+                    reversename<<myvec[0]<<"\n";
                 }
                 else
                 {

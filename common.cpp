@@ -10,25 +10,13 @@
 #include <map>
 #include "common.h"
 
-using namespace std;//
-// Created by aysegul on 4/6/18.
-//
-
-#include <iostream>
-#include <fstream>
-#include <cstring>
-#include <vector>
-#include <sstream>
-#include <map>
-#include "common.h"
-
 using namespace std;
 
 bool isUnique1(int argc, char** argv)
 {
     string line;
     string line2;
-    char path[100] = "/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+    char path[100] = "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
     if(argc<=1)
     {
         cout<<"Sample number is missing"<<endl;
@@ -44,7 +32,7 @@ bool isUnique1(int argc, char** argv)
 
         while (getline(uniquefile, line))
         {
-            char path2[100] = "/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+            char path2[100] = "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
             strcat(path2,sample_number);
             char constant[5]="/";
             strcat(path2,constant);
@@ -124,39 +112,13 @@ vector<int> convertbyspace_int(string input)
     return line_vector;
 }
 
-vector<string> convertbytab(string input)
+vector<long long int> convertbyspace_longlongint(string input)
 {
     vector<char> v;
 
     istringstream ss(input);
     string token;
-    vector<string> line_vector;
-    while(std::getline(ss, token, '\t'))
-    {
-        line_vector.push_back(token);
-    }
-    return line_vector;
-}
-vector<string> convertbyspace(string input)
-{
-    vector<char> v;
-
-    istringstream ss(input);
-    string token;
-    vector<string> line_vector;
-    while(std::getline(ss, token, ' '))
-    {
-        line_vector.push_back(token);
-    }
-    return line_vector;
-}
-vector<int> convertbyspace_int(string input)
-{
-    vector<char> v;
-
-    istringstream ss(input);
-    string token;
-    vector<int> line_vector;
+    vector<long long int> line_vector;
     while(std::getline(ss, token, ' '))
     {
         line_vector.push_back(stoi(token));

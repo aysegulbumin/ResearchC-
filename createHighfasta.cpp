@@ -19,10 +19,10 @@ int createHighfasta(int argc, char** argv)
     string line;
     string line2;
     int len=0;
-    char path[60] = "/home/aysegull/Dropbox/clion/ResearchC++/histogram";
-    char path2[60] = "/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+    char path[60] = "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
+    char path2[60] = "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
 
-    char path6[60]="/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+    char path6[60]="/home/aysegul/Dropbox/clion/ResearchC++/histogram";
 
     if(argc<=1)
     {
@@ -183,6 +183,12 @@ int createHighfasta(int argc, char** argv)
 
     }
     about.close();
+    char resultpath[100] = "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
+    strcat(resultpath,sample_number);
+    char endresultpath[20]="/blat1_list.txt";
+    strcat(resultpath,endresultpath);
+    ofstream resultfile;
+    resultfile.open(resultpath);
     int c=0;
     for(auto elem : starts)
     {
@@ -199,8 +205,11 @@ int createHighfasta(int argc, char** argv)
 
         strcat(en4,to_string(c).c_str());
         strcat(en4,endpath5);
-        char path3[100] = "/home/aysegull/Dropbox/clion/ResearchC++/database/megares_database_v1.01.fasta";
-        blatfile << "/home/aysegull/Dropbox/clion/ResearchC++/histogram"<<sample_number<<"/blat 	/home/aysegull/Dropbox/clion/ResearchC++/histogram"<<sample_number<<"/"<<en4 <<"	"<< path3<<"	/home/aysegull/Dropbox/clion/ResearchC++/histogram"<<sample_number<<"/res1_"<<to_string(c)<<".psl"<<"\n";
+        char path3[100] = "/home/aysegul/Dropbox/clion/ResearchC++/database/megares_database_v1.01.fasta";
+        blatfile << "/home/aysegul/Dropbox/clion/ResearchC++/histogram"<<sample_number<<"/blat 	/home/aysegul/Dropbox/clion/ResearchC++/histogram"<<sample_number<<"/"<<en4 <<"	"<< path3<<"	/home/aysegul/Dropbox/clion/ResearchC++/histogram"<<sample_number<<"/res1_"<<to_string(c)<<".psl"<<"\n";
+
+
+        resultfile <<"res1_"<<to_string(c)<<".psl\n";
 
         ifstream thiss (path3);
 
@@ -249,7 +258,7 @@ int createHighfasta(int argc, char** argv)
         //cout<<"TO WRITE\n"<<endl;
         //cout<<to_write;
         char endpath6[10]=".fasta";
-        char path4[60] = "/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+        char path4[60] = "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
         strcat(path4,sample_number);
         strcat(path4,endpath4);
         strcat(path4,to_string(c).c_str());

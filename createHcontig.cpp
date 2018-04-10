@@ -178,11 +178,11 @@ int createHcontig (int argc, char** argv)
     //Initialize the matrix
 
     int len=0;
-    char path[100] = "/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+    char path[100] = "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
     char endpath[20]="/aboutH.txt";
     char endpath2[20]=".sam";
 
-    char path3[100] = "/home/aysegull/Dropbox/clion/ResearchC++/all";
+    char path3[100] = "/home/aysegul/Dropbox/clion/ResearchC++/all";
 
 
     if(argc<=1)
@@ -214,18 +214,18 @@ int createHcontig (int argc, char** argv)
     int count=0;
     int c=0;
 
-    char front_oea_path[70] = "/home/aysegull/Dropbox/clion/ResearchC++/frontname_oea";
+    char front_oea_path[100] = "/home/aysegul/Dropbox/clion/ResearchC++/frontname_oea";
     char front_oea_pathend[5]=".txt";
-    char reverse_oea_path[60] = "/home/aysegull/Dropbox/clion/ResearchC++/reversename_oea";
+    char reverse_oea_path[100] = "/home/aysegul/Dropbox/clion/ResearchC++/reversename_oea";
     char reverse_oea_pathend[5]=".txt";
     strcat(front_oea_path,sample_number);
     strcat(front_oea_path,front_oea_pathend);
     strcat(reverse_oea_path,sample_number);
     strcat(reverse_oea_path,reverse_oea_pathend);
     ofstream oea_front;
-    oea_front.open (front_oea_path);
+    oea_front.open(front_oea_path);
     ofstream oea_reverse;
-    oea_reverse.open (reverse_oea_path);
+    oea_reverse.open(reverse_oea_path);
 
 
     if (myfile.is_open())
@@ -242,7 +242,7 @@ int createHcontig (int argc, char** argv)
                 {
                     c++;
                     genename=line;
-                    char path2[60] = "/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+                    char path2[100] = "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
                     char slash2[5]="/";
                     char endpath_[20]=".sam";
                     strcat(path2,sample_number);
@@ -268,14 +268,14 @@ int createHcontig (int argc, char** argv)
 
                                 if(69 == stoi(lin[1]) || 73 == stoi(lin[1]))
                                 {
-                                    oea_front<<lin[0]<<"/1\n";
-                                    oea_reverse<<lin[0]<<"/2\n";
+                                    oea_front<<lin[0]<<"\n";
+                                    oea_reverse<<lin[0]<<"\n";
 
                                 }
                                 if(137 == stoi(lin[1]) || 133== stoi(lin[1]) )
                                 {
-                                    oea_front<<lin[0]<<"/1\n";
-                                    oea_reverse<<lin[0]<<"/2\n";
+                                    oea_front<<lin[0]<<"\n";
+                                    oea_reverse<<lin[0]<<"\n";
                                 }
                                 samfile<<line2<<"\n";
 
@@ -322,9 +322,7 @@ int createHcontig (int argc, char** argv)
     }
 
 
-
     else cout << "Unable to open file";
-
     int start_here=0;
     int end_here=0;
     string filepath;
@@ -332,7 +330,7 @@ int createHcontig (int argc, char** argv)
     for(auto elem : name_starts)
     {
         count_Contig++;
-        char contigpath[60] = "/home/aysegull/Dropbox/clion/ResearchC++/histogram";
+        char contigpath[60] = "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
         char contigslash[10]="/contig";
         strcat(contigpath,sample_number);
         strcat(contigpath, contigslash);
@@ -377,6 +375,7 @@ int createHcontig (int argc, char** argv)
 
 
         }
+
 
     }
 
