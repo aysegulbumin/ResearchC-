@@ -21,6 +21,8 @@ int array(int argc, char **argv)
     int len=0;
     char path[100] = "/home/aysegul/Dropbox/clion/ResearchC++/genesname_length.txt";
     char patharray[100] = "/home/aysegul/Dropbox/clion/ResearchC++/arraylist.txt";
+    //string path="/home/aysegul/Dropbox/clion/ResearchC++/genesname_length.txt";
+    //string patharray="/home/aysegul/Dropbox/clion/ResearchC++/arraylist.txt";
     if(argc<=1)
     {
         cout<<"Sample number is missing in array"<<endl;
@@ -30,11 +32,13 @@ int array(int argc, char **argv)
 
     char *sample_number=argv[1];
 
-
+    //string sample_number=argv[1];
+    //string path3="/home/aysegul/Dropbox/clion/ResearchC++/all";
+    //string endpath3=".sam";
     char path3[100] = "/home/aysegul/Dropbox/clion/ResearchC++/all";
     char endpath3[5]=".sam";
 
-
+    //path3=path3+sample_number+endpath3;
     strcat(path3,sample_number);
     strcat(path3,endpath3);
 
@@ -84,7 +88,7 @@ int array(int argc, char **argv)
 
 
 
-    else cout << "Unable to open file";
+    else cout << "Unable to open file genesnamelength\n";
     //cout<<	"Printing Map"<<endl;
     int count0=0;
     ofstream arraylistfile;
@@ -92,6 +96,11 @@ int array(int argc, char **argv)
     for(auto elem : mymap)
     {
         count0++;
+        //string path_="/home/aysegul/Dropbox/clion/ResearchC++/genesams";
+        //string slash="/gene";
+        //string gene_number=to_string(count0);
+        //string endpath_=".sam";
+        //path_=path_+sample_number+slash+gene_number+endpath_;
 
         char path_[100]= "/home/aysegul/Dropbox/clion/ResearchC++/genesams";
         char slash[6]="/gene";
@@ -106,6 +115,10 @@ int array(int argc, char **argv)
 
 
 
+       /* string path_2="/home/aysegul/Dropbox/clion/ResearchC++/histogram";
+        string slash2="/array";
+        string endpath_2=".txt";
+        path_2=path_2+sample_number+slash2+gene_number+endpath_2; */
 
         char path_2[100]= "/home/aysegul/Dropbox/clion/ResearchC++/histogram";
         char slash2[7]="/array";
@@ -119,7 +132,7 @@ int array(int argc, char **argv)
         string name=elem.first;
         arraylistfile<<"array"+to_string(count0)+".txt\n";
         len=map_length[elem.first];
-        int my_vec[4000] = {0};
+        int my_vec[4500] = {0};
 
         //vector<int> my_vec;
 
@@ -142,12 +155,6 @@ int array(int argc, char **argv)
             arrayfile<<my_vec[i];
             arrayfile<< " ";
         }
-        /*
-        for (int i : my_vec)
-        {
-            arrayfile<< i;
-            arrayfile<<" ";
-        }*/
 
         arrayfile<<"\n";
         arrayfile<<name;
@@ -162,4 +169,3 @@ int array(int argc, char **argv)
 
     return 0;
 }
-
